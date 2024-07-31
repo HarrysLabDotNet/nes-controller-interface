@@ -1,0 +1,21 @@
+{
+    "name": "NES Controller Interface",
+    "version": "1.0.0",
+    "description": "A simple interface for the NES controller, allowing for the 8 buttons of the NES controller to be read by a microcontroller.",
+    "keywords": "NES, Controller, Input, Interface",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/HBoyd255/nes-controller-interface-platform-io"
+    },
+    "authors": [
+        {
+            "name": "Harry Boyd",
+            "email": "hboyd255@gmail.com",
+            "url": "https://hboyd.co.uk/"
+        }
+    ],
+    "license": "MIT",
+    "homepage": "https://github.com/HBoyd255/nes-controller-interface-platform-io",
+    "frameworks": "*",
+    "platforms": "*"
+}
