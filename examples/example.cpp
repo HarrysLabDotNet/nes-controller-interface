@@ -20,13 +20,14 @@ void setup() {
 }
 
 void loop() {
-    // Get the byte read directly from the controller, without error checking.
-    // This is just supposed to be used for debugging purposes.
+    // Read the data from the controller as a byte directly from the controller,
+    // without error checking. This is just supposed to be used for debugging
+    // purposes.
     uint8_t rawData = nes.read();
     Serial.print("NES Data Raw: ");
     Serial.println(rawData, BIN);
 
-    // Get the byte read from the controller, after it has been error checked.
+    // Read the data from the controller as a byte.
     uint8_t data = nes.read();
     Serial.print("NES Data: ");
     Serial.println(data, BIN);
@@ -48,8 +49,11 @@ void loop() {
     Serial.print("List of pressed buttons: ");
     Serial.println(input.buttonsPressedAsString());
 
-    // Print out the states of the buttons individually.
+    // Print weather or not any buttons are pressed.
+    Serial.print("Are any buttons pressed? : ");
+    Serial.println((input.anyButtonPressed()) ? "Yes" : "No");
 
+    // Print out the states of the buttons individually.
     Serial.print("Is the A button pressed? : ");
     Serial.println((input.buttonA) ? "Yes" : "No");
 
