@@ -49,6 +49,14 @@ struct NESInput {
      * @return String representing the buttons that are pressed.
      */
     String buttonsPressedAsString();
+
+    /**
+     * @brief Implicitly convert the NESInput object to a string, using the
+     * statesAsString() method.
+     *
+     * @return String representing the state of the NESInput object
+     */
+    operator String();
 };
 
 /**
@@ -102,8 +110,6 @@ class NESControllerInterface {
      * @brief The pin connected to the clock pin on the shift register.
      */
     uint8_t _clockPin;
-
-
 };
 
 #endif  // NES_CONTROLLER_INTERFACE_H

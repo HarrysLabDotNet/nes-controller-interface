@@ -89,6 +89,14 @@ String NESInput::buttonsPressedAsString() {
 }
 
 /**
+ * @brief Implicitly convert the NESInput object to a string, using the
+ * statesAsString() method.
+ *
+ * @return String representing the state of the NESInput object
+ */
+NESInput::operator String() { return this->statesAsString(); }
+
+/**
  * @brief Construct a new NESControllerInterface object.
  *
  * @param dataPin The pin connected to the data pin on the shift register.
