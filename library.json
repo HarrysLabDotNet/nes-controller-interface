@@ -1,5 +1,5 @@
 {
-    "name": "NES Controller Interface",
+    "name": "NESControllerInterface",
     "version": "1.0.0",
     "description": "A simple interface for the NES controller, allowing for the 8 buttons of the NES controller to be read by a microcontroller.",
     "keywords": "NES, Controller, Input, Interface",
