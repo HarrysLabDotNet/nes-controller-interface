@@ -111,7 +111,7 @@ NESControllerInterface::NESControllerInterface(uint8_t dataPin, uint8_t loadPin,
  * @return The data from the NES controller.
  */
 uint8_t NESControllerInterface::read() {
-    uint8_t rawData = this->_readRaw();
+    uint8_t rawData = this->readRaw();
 
     // Get the state of the arrow buttons.
     bool up_pressed = (!(rawData & 8));
@@ -165,9 +165,9 @@ NESInput NESControllerInterface::getNESInput() {
  *
  * @return The raw data from the NES controller.
  */
-uint8_t NESControllerInterface::_readRaw() {
+uint8_t NESControllerInterface::readRaw() {
     // Create a byte for storing the received data from the shift register.
-    byte shiftRegisterContents = 0;
+    uint8_t shiftRegisterContents = 0;
 
     // Load the data into the shift register by sending a pulse to the load
     // pin.
