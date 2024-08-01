@@ -1,4 +1,4 @@
-# NES Controller Interface
+# NES Controller Interface (Platform IO Library)
 
 A simple interface for the NES controller, allowing for the 8 buttons of the NES
 controller to be read by a microcontroller.
@@ -8,6 +8,27 @@ controller to be read by a microcontroller.
 The breakout board that allows for the NES Controller to be connected to a
 microcontroller is available on github at
 [github.com/HBoyd255/nes-controller-breakout-board](https://github.com/HBoyd255/nes-controller-breakout-board).
+
+# Installation
+
+To intall the library, add either of the following to the `platformio.ini` file.
+
+From the PlatformIO Library Registry:
+
+```ini
+lib_deps =
+    hboyd255/NESControllerInterface
+```
+
+From the GitHub repository:
+
+```ini
+lib_deps =
+    https://github.com/HBoyd255/nes-controller-interface-platform-io.git
+```
+
+The library can also be found by searching for `NESControllerInterface` in the
+PlatformIO Library Manager.
 
 ## Usage
 
