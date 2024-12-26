@@ -23,7 +23,7 @@ void loop() {
     // Read the data from the controller as a byte directly from the controller,
     // without error checking. This is just supposed to be used for debugging
     // purposes.
-    uint8_t rawData = nes.read();
+    uint8_t rawData = nes.readRaw();
     Serial.print("NES Data Raw: ");
     Serial.println(rawData, BIN);
 
