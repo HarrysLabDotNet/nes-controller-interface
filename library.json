@@ -5,17 +5,16 @@
     "keywords": "NES, Controller, Input, Interface",
     "repository": {
         "type": "git",
-        "url": "https://github.com/HBoyd255/nes-controller-interface-platform-io"
+        "url": "https://github.com/HarrysLabDotNet/nes-controller-interface-platform-io"
     },
     "authors": [
         {
-            "name": "Harry Boyd",
-            "email": "hboyd255@gmail.com",
-            "url": "https://hboyd.co.uk/"
+            "name": "Harry's Lab",
+            "email": "dev@harryslab.net",
+            "url": "https://harryslab.net/"
         }
     ],
-    "license": "MIT",
-    "homepage": "https://github.com/HBoyd255/nes-controller-interface-platform-io",
+    "homepage": "https://harryslab.net/nes-controller-breakout-board",
     "frameworks": "*",
     "platforms": "*"
 }

@@ -7,24 +7,15 @@ controller to be read by a microcontroller.
 
 The breakout board that allows for the NES Controller to be connected to a
 microcontroller is available on github at
-[github.com/HBoyd255/nes-controller-breakout-board](https://github.com/HBoyd255/nes-controller-breakout-board).
+[harryslab.net/nes-controller-breakout-board](https://harryslab.net/nes-controller-breakout-board).
 
 # Installation
 
-To intall the library, add either of the following to the `platformio.ini` file.
-
-From the PlatformIO Library Registry:
+To install the library, add the following to the `platformio.ini` file.
 
 ```ini
 lib_deps =
-    hboyd255/NESControllerInterface
-```
-
-From the GitHub repository:
-
-```ini
-lib_deps =
-    https://github.com/HBoyd255/nes-controller-interface-platform-io.git
+    harryslabdotnet/NESControllerInterface
 ```
 
 The library can also be found by searching for `NESControllerInterface` in the
@@ -76,7 +67,7 @@ Serial.println(input.statesAsString());
 Serial.print("List of pressed buttons: ");
 Serial.println(input.buttonsPressedAsString());
 
-// Print weather or not any buttons are pressed.
+// Print whether or not any buttons are pressed.
 Serial.print("Are any buttons pressed? : ");
 Serial.println((input.anyButtonPressed()) ? "Yes" : "No");
 
