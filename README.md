@@ -1,4 +1,4 @@
-# NES Controller Interface (Platform IO Library)
+# NES Controller Interface (Platform IO and Arduino Library)
 
 A simple interface for the NES controller, allowing for the 8 buttons of the NES
 controller to be read by a microcontroller.
@@ -6,10 +6,10 @@ controller to be read by a microcontroller.
 ## Hardware
 
 The breakout board that allows for the NES Controller to be connected to a
-microcontroller is available on github at
+microcontroller is available online at
 [harryslab.net/nes-controller-breakout-board](https://harryslab.net/nes-controller-breakout-board).
 
-# Installation
+# Installation (Platform IO)
 
 To install the library, add the following to the `platformio.ini` file.
 
@@ -21,23 +21,32 @@ lib_deps =
 The library can also be found by searching for `NESControllerInterface` in the
 PlatformIO Library Manager.
 
+# Installation (Arduino)
+
+- Download the repository as a ZIP file.
+- Open the Arduino IDE.
+- Go to `Sketch > Include Library > Add .ZIP Library...`.
+- Select the ZIP file of the library.
+- The library will now be installed and available under
+  `Sketch > Include Library > NESControllerInterface`.
+
 ## Usage
 
 Creating the interface is simple. The constructor for the
 `NESControllerInterface` takes 3 pins as parameters. The first is the data pin,
-the second is the latch pin, and the third is the clock pin.
+the second is the load pin, and the third is the clock pin.
 
 ```cpp
 #include <NESControllerInterface.h>
 
 // Constructor for the NESControllerInterface class.
-// The first parameter is the data pin, the second is the latch pin, and the
+// The first parameter is the data pin, the second is the load pin, and the
 // third is the clock pin.
 NESControllerInterface nes(D8, A3, A2);
 ```
 
-Then to read the buttons, a call to the `read()` function is will read the
-button values as a byte.
+Then to read the buttons, a call to the `read()` function will read the button
+values as a byte.
 
 ```cpp
 // Get the byte read from the controller, after it has been error checked.
@@ -46,8 +55,8 @@ Serial.print("NES Data: ");
 Serial.println(data, BIN);
 ```
 
-To make reading values easier, the values can be read as a NESInput struct. This
-has additional functions to check the state of the buttons.
+To simplify reading the buttons, the values can be read as a NESInput struct.
+This has additional functions to check the state of each button.
 
 ```cpp
 // Get the input from the controller, as a struct.

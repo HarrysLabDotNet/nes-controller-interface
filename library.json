@@ -5,7 +5,7 @@
     "keywords": "NES, Controller, Input, Interface",
     "repository": {
         "type": "git",
-        "url": "https://github.com/HarrysLabDotNet/nes-controller-interface-platform-io"
+        "url": "https://github.com/HarrysLabDotNet/nes-controller-interface"
     },
     "authors": [
         {

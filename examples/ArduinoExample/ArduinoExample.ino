@@ -3,10 +3,9 @@
  * @brief Example code for the NESControllerInterface library.
  *
  * @author Harry Boyd - https://github.com/HBoyd255
- * @date 2024-08-01
+ * @date 28/12/2024
  * @copyright Copyright (c) 2024
  */
-#include <Arduino.h>
 #include <NESControllerInterface.h>
 
 // Constructor for the NESControllerInterface class.
