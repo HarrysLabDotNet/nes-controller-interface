@@ -41,15 +41,16 @@ the second is the load pin, and the third is the clock pin.
 
 // Constructor for the NESControllerInterface class.
 // The first parameter is the data pin, the second is the load pin, and the
-// third is the clock pin.
-NESControllerInterface nes(D8, A3, A2);
+// third is the clock pin. The GPIO pins 8, 9 and 10 have been selected for this
+// example, however, any gpio pins will work.
+NESControllerInterface nes(8, 9, 10);
 ```
 
 Then to read the buttons, a call to the `read()` function will read the button
 values as a byte.
 
 ```cpp
-// Get the byte read from the controller, after it has been error checked.
+// Read the data from the controller as a byte.
 uint8_t data = nes.read();
 Serial.print("NES Data: ");
 Serial.println(data, BIN);
@@ -64,6 +65,15 @@ This has additional functions to check the state of each button.
 // manipulation.
 NESInput input = nes.getNESInput();
 
+// Now each button can be read as a boolean, as follows,
+if (input.buttonA) {
+    // A button is pressed.
+} else {
+    // A button is not pressed.
+}
+// Additional functionality for this struct can be found in
+// NESControllerInterface.h
+
 // Print the input to the serial monitor, using implicit conversion to a
 // string.
 Serial.println(input);
@@ -76,7 +86,7 @@ Serial.println(input.statesAsString());
 Serial.print("List of pressed buttons: ");
 Serial.println(input.buttonsPressedAsString());
 
-// Print whether or not any buttons are pressed.
+// Print weather or not any buttons are pressed.
 Serial.print("Are any buttons pressed? : ");
 Serial.println((input.anyButtonPressed()) ? "Yes" : "No");
 

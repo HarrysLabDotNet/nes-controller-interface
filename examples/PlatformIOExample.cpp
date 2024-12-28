@@ -1,18 +1,23 @@
 /**
- * @file main.cpp
+ * @file ArduinoExample.ino
  * @brief Example code for the NESControllerInterface library.
  *
  * @author Harry Boyd - https://github.com/HBoyd255
- * @date 2024-08-01
+ * @date 28/12/2024
  * @copyright Copyright (c) 2024
  */
-#include <Arduino.h>
 #include <NESControllerInterface.h>
+
+// The GPIO pins 8, 9 and 10 have been selected for this example,
+// however, any gpio pins will work.
+#define DATA_PIN D8
+#define LOAD_PIN D9
+#define CLOCK_PIN D10
 
 // Constructor for the NESControllerInterface class.
 // The first parameter is the data pin, the second is the load pin, and the
 // third is the clock pin.
-NESControllerInterface nes(D8, A3, A2);
+NESControllerInterface nes(DATA_PIN, LOAD_PIN, CLOCK_PIN);
 
 void setup() {
     // Initialize the serial monitor.
@@ -36,6 +41,15 @@ void loop() {
     // This allows for the buttons to be accessed by name, rather than by bit
     // manipulation.
     NESInput input = nes.getNESInput();
+
+    // Now each button can be read as a boolean, as follows,
+    if (input.buttonA) {
+        // A button is pressed.
+    } else {
+        // A button is not pressed.
+    }
+    // Additional functionality for this struct can be found in
+    // NESControllerInterface.h
 
     // Print the input to the serial monitor, using implicit conversion to a
     // string.
@@ -79,5 +93,7 @@ void loop() {
     Serial.println((input.buttonRight) ? "Yes" : "No");
 
     Serial.println("--------------------------------------------------");
+
+    // Delay to make the serial monitor easier to read.
     delay(1000);
 }
