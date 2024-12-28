@@ -1,5 +1,5 @@
 /**
- * @file PlatformIOExample.ino
+ * @file PlatformIOExample.cpp
  * @brief Example code for the NESControllerInterface library.
  *
  * @author Harry Boyd - https://github.com/HBoyd255
